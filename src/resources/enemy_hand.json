@@ -1,0 +1,56 @@
+[
+{
+  "card_id": "006",
+  "name": "Bomb",
+  "values": [
+    3,
+    4,
+    3,
+    3
+  ],
+  "file_link": "https://i.imgur.com/5rQTQo3.png"
+},
+{
+  "card_id": "007",
+  "name": "Mandragora",
+  "values": [
+    4,
+    2,
+    5,
+    3
+  ],
+  "file_link": "https://i.imgur.com/nzXClFM.png"
+},
+{
+  "card_id": "008",
+  "name": "Coblyn",
+  "values": [
+    3,
+    3,
+    3,
+    4
+  ],
+  "file_link": "https://i.imgur.com/KK0fKQ1.png"
+},
+{
+  "card_id": "009",
+  "name": "Morbol",
+  "values": [
+    5,
+    2,
+    2,
+    5
+  ],
+  "file_link": "https://i.imgur.com/hzrojCY.png"
+},
+{
+  "card_id": "010",
+  "name": "Coeurl",
+  "values": [
+    2,
+    5,
+    2,
+    5
+  ],
+  "file_link": "https://i.imgur.com/t46k9ig.png"
+}]

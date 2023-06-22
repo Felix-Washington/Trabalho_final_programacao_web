@@ -1,0 +1,57 @@
+[
+  {
+    "card_id": "001",
+    "name": "Dodo",
+    "values": [
+      4,
+      2,
+      3,
+      4
+    ],
+    "file_link": "https://i.imgur.com/ZMMg6ek.png"
+  },
+  {
+    "card_id": "002",
+    "name": "Tonberry",
+    "values": [
+      2,
+      2,
+      7,
+      2
+    ],
+    "file_link": "https://i.imgur.com/10gIt9B.png"
+  },
+  {
+    "card_id": "003",
+    "name": "Sabotender",
+    "values": [
+      4,
+      3,
+      3,
+      3
+    ],
+    "file_link": "https://i.imgur.com/6aWK5RG.png"
+  },
+  {
+    "card_id": "004",
+    "name": "Spriggan",
+    "values": [
+      2,
+      3,
+      4,
+      4
+    ],
+    "file_link": "https://i.imgur.com/2Nhi0Tu.png"
+  },
+  {
+    "card_id": "005",
+    "name": "Pudding",
+    "values": [
+      2,
+      4,
+      3,
+      5
+    ],
+    "file_link": "https://i.imgur.com/6pK6Fhu.png"
+  }
+]
