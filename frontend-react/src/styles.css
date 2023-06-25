@@ -1,0 +1,323 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 20px;
+  padding: 0;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+h3 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+h4 {
+  margin-top: 0;
+  font-size: 16px;
+}
+
+h5 {
+  margin-top: 0;
+  font-size: 14px;
+}
+
+h6 {
+  margin-top: 0;
+  font-size: 12px;
+}
+
+code {
+  font-size: 1.2em;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 20px;
+  padding: 0;
+  background:url(https://i.imgur.com/W93TBJq.png)
+}
+.loadingscreen{
+  background-color:#7A5687;
+  display:flex;
+  width: 400px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin:15% 35% 0px 38%;
+  padding-bottom:10px;
+  color:white;
+  border:5px dotted white;
+}
+
+.game{
+  background-color: #7A5687;
+  margin:10% 10% 0px 10%;
+  border:5px solid black;
+  border-radius: 50px;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.player-hand{
+  width:400px;
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  justify-content: center;
+  
+}
+.enemy-hand{
+  width:400px;
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  justify-content: center;
+}
+
+.tt-card{
+  background-color: #999;
+  position: relative;
+  margin:5px;
+  width:100px;
+  height:125px;
+  color:white;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 10);
+  -webkit-mask-image: url(https://i.imgur.com/x67q3sC.png);
+  mask-image: url(https://i.imgur.com/x67q3sC.png);
+  
+}
+.tt-card .tooltiptext {
+  font-size:10px;
+  visibility: visible;
+  width: 50px;
+  background-color: transparent;
+  color: #fff;
+  text-align: left;
+  padding: 5px 0;
+  padding-left:10px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tt-card:hover {
+  box-shadow: inset 5em 1em #713231;
+}
+
+.card-red{
+  background-color:#713231;
+  position: relative;
+  margin:5px;
+  width:100px;
+  height:125px;
+  color:white;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 10);
+  -webkit-mask-image: url(https://i.imgur.com/x67q3sC.png);
+  mask-image: url(https://i.imgur.com/x67q3sC.png);
+  
+}
+.card-blue{
+  background-color:#3B5D7A;
+  position: relative;
+  margin:5px;
+  width:100px;
+  height:125px;
+  color:white;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 10);
+  -webkit-mask-image: url(https://i.imgur.com/x67q3sC.png);
+  mask-image: url(https://i.imgur.com/x67q3sC.png);
+  
+}
+
+.up_value {
+  position: absolute;
+  top: 47%;
+  right:40%;
+}
+
+
+.right-value {
+  position: absolute;
+  top: 59%;
+  right: 19%;
+}
+
+
+.bottom-value {
+  position: absolute;
+  bottom:8px;
+  right:40%;
+}
+
+
+.left-value {
+  position: absolute;
+  top: 59%;
+  left: 27%;
+}
+.tt-card-cover{
+  position: absolute;
+}
+.board{
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: space-between;
+  border:1px solid black;
+}
+.board-row{
+  display:flex;
+  flex-direction:row;
+  align-items: center;
+}
+
+
+.square {
+  border: 1px solid #999;
+  float: left;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding-left: 20px;
+  text-align: center;
+  height: 150px;
+  width: 150px;
+}
+
+@media only screen and (min-width: 1600px){
+  .game{
+    background-color: #7A5687;
+    margin:10% 10% 0px 10%;
+    border:5px solid black;
+    border-radius: 50px;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    
+  }
+  .tt-card{
+    margin:15px;
+    -webkit-transform:scale(1.2); /* Safari and Chrome */
+    -moz-transform:scale(1.2); /* Firefox */
+    -ms-transform:scale(1.2); /* IE 9 */
+    -o-transform:scale(1.2); /* Opera */
+    transform:scale(1.2);
+  }
+@media only screen and (min-width: 1800px){
+    .game{
+      background-color: #7A5687;
+      margin:10% 10% 0px 10%;
+      border:5px solid black;
+      border-radius: 50px;
+      display:flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      min-height:600px;
+      
+    }
+    .tt-card{
+      margin:25px;
+      -webkit-transform:scale(1.4); /* Safari and Chrome */
+      -moz-transform:scale(1.4); /* Firefox */
+      -ms-transform:scale(1.4); /* IE 9 */
+      -o-transform:scale(1.4); /* Opera */
+      transform:scale(1.4);
+    }
+    .player-hand{
+      width:600px;
+    }
+    .enemy-hand{
+      width:600px;
+    }
+    .square{
+      margin:20px;
+      -webkit-transform:scale(1.3); /* Safari and Chrome */
+      -moz-transform:scale(1.3); /* Firefox */
+      -ms-transform:scale(1.3); /* IE 9 */
+      -o-transform:scale(1.3); /* Opera */
+      transform:scale(1.3);
+    }
+    .card-blue{
+      margin-bottom:25px;
+      margin-left:-2px;
+      -webkit-transform:scale(1.0); /* Safari and Chrome */
+      -moz-transform:scale(1.0); /* Firefox */
+      -ms-transform:scale(1.0); /* IE 9 */
+      -o-transform:scale(1.0); /* Opera */
+      transform:scale(1.0);
+    }
+    .card-red{
+      margin-bottom:25px;
+      margin-left:-2px;
+      -webkit-transform:scale(1.0); /* Safari and Chrome */
+      -moz-transform:scale(1.0); /* Firefox */
+      -ms-transform:scale(1.0); /* IE 9 */
+      -o-transform:scale(1.0); /* Opera */
+      transform:scale(1.0);
+    }
+  }
+}
+.square .tooltiptext {
+  font-size:10px;
+  visibility: hidden;
+  width: 50px;
+  background-color: transparent;
+  color: #fff;
+  text-align: left;
+
+  padding-left:10px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+.square:hover .tooltiptext {
+  visibility: visible;
+}
+.board-row:after {
+  clear: both;
+  content: '';
+  display: table;
+}
+
+.status {
+  margin-bottom: 10px;
+}
+
+

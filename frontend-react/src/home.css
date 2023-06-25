@@ -1,0 +1,27 @@
+.main-window{
+    background-color: #7A5687;
+    margin:1% 10% 0px 10%;
+    padding-top:10px;
+    border:5px solid black;
+    border-radius: 50px;
+    min-height:600px;
+}
+
+ul{
+    display:flex;
+    flex-direction: row;
+
+}
+li{
+    float: left;
+}
+h1{
+    padding-left:14px;
+}
+h2{ 
+    margin-top:18px;
+    margin-left:18px;
+    padding-left: 14px;
+    background:white;
+    width:320px;
+}
