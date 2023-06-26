@@ -2,15 +2,16 @@ import React, { useState } from "react";
 import Navigation from "./navbar";
 import "./home.css";
 
+/* IMPLEMENTAR QUERY INDIVIDUAL DE COLEÇÃO DO USUARIO -> Pós Login
 const request = new XMLHttpRequest();
-request.open('GET', '/api/cards', false);  // `false` makes the request synchronous
+request.open('GET', '/api/cards/', false);  // `false` makes the request synchronous
 request.send(null);
 if (request.status !== 200) {
   console.log(request.status);
 }
 
 const req = JSON.parse(request.responseText);
-
+*/
 /*
 */
 function Card({carta}){
@@ -39,7 +40,6 @@ function CardCollection(){
             <Navigation/>
             <div className="main-window">
                 <h1>Cards:</h1>
-                <CardHolder cartas={req}></CardHolder>
                 
                 <img></img>
             </div>

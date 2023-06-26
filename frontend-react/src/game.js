@@ -99,7 +99,7 @@ export default function Board() {
   //requests da API pra começar o jogo
   function game_start(){
     
-    fetch('/api/cards', {
+    fetch('/api/users/email/test2@testemail.com', {
     method: "GET",
     headers: {
       "Accept": "application/json"
@@ -107,7 +107,7 @@ export default function Board() {
     })
     .then(response => response.json())
     .then(json => {
-      setPlayerHand(json);
+      setPlayerHand(json.deck);
     })
     .catch(error => console.error(error));
 
@@ -119,8 +119,7 @@ export default function Board() {
       })
       .then(response => response.json())
       .then(json => {
-        console.log(json.cards)
-        setEnemyHand(json.cards)
+        setEnemyHand(json.deck)
         setLoading(false);
       })
       .catch(error => console.error(error));

@@ -14,9 +14,15 @@ const userSchema = new Schema({
     type: String,
     required: true
   },
-  session: {
+  token: {
     type: String,
     required: true
+  },
+  deck: {
+    type:Array
+  },
+  listacartas: {
+    type:Array
   },
   createdAt: {
     type: Date,
