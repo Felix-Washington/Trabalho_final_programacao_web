@@ -10,7 +10,7 @@ if (request.status !== 200) {
 }
 
 const req = JSON.parse(request.responseText);
-const teste = req.data;
+
 /*
 */
 function Card({carta}){
@@ -39,7 +39,7 @@ function CardCollection(){
             <Navigation/>
             <div className="main-window">
                 <h1>Cards:</h1>
-                <CardHolder cartas={teste}></CardHolder>
+                <CardHolder cartas={req}></CardHolder>
                 
                 <img></img>
             </div>

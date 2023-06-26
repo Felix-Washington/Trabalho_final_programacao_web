@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import "./login.css";
 import "bootstrap/dist/css/bootstrap.min.css"
 
-async function loginUser(credentials) {
-    return fetch('https://www.mecallapi.com/api/login', {
+async function loginUser(email, password) {
+    return fetch('/api/users/auth', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(credentials)
+      body: {email: email, password:password}
     })
       .then(data => data.json())
 }
@@ -19,6 +19,8 @@ function Login({token}){
     const [password, setPassword] = useState();
     
     const handleSubmit = async e => {
+        console.log("TEST");
+        loginUser(email, password);
         //alert(username);
         //alert(password);
         e.preventDefault();

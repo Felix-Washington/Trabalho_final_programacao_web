@@ -1,32 +1,10 @@
 const express = require("express");
 const cors = require('cors');
-const cookieParser = require("cookie-parser");
-const sessions = require('express-session');
 const app = express();
-const CardRouter = require("./routes/CardRoutes");
-const UserRouter = require("./routes/UserRoutes")
 
-//Sessions
-const oneDay = 1000 * 60 * 60 * 24;
-app.use(sessions({
-    secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",
-    saveUninitialized:true,
-    cookie: { maxAge: oneDay },
-    resave: false 
-}));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(cookieParser());
 
-//middleware
-app.use(express.json());
- 
-app.listen(5000, () => {
-  console.log("Server is running on port 5000");
-});
-app.use(cors())
-module.exports = app;
 
+//ConnectDB
 const mongoose = require("mongoose");
 mongoose.connect(
     process.env.MONGODB_URI = "mongodb://127.0.0.1:27017/", 
@@ -37,6 +15,47 @@ mongoose.connect(
     },
     console.log("CONNECTED")
 );
-app.use("/", CardRouter);
-app.use("/", UserRouter);
+
+app.use(cors());
+
+//Read PUT/POST
+app.use(express.json({ extended: false }));
+
+//PORT SET
+app.listen(5000, () => {
+    console.log("Server is running on port 5000");
+  });
+
+module.exports = app;
+
+// routes
+const cards = require('./routes/api/Cards');
+const users = require('./routes/api/users')
+app.use('/api/cards', cards);
+app.use('/api/users', users);
+// use Routes
+/*
+//Sessions
+const oneDay = 1000 * 60 * 60 * 24;
+express.use(sessions({
+    secret: "thisismysecrctekeyfhrgfgrfrty84fwir767",
+    saveUninitialized:true,
+    cookie: { maxAge: oneDay },
+    resave: false 
+}));
+// cookie parser middleware
+express.use(cookieParser());
+// cors
+
+express.use(express.urlencoded({ extended: true }));
+
+//middleware
+express.use(express.json());
+*/
+
+
+
+
+
+
 
