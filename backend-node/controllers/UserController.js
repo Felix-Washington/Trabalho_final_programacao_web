@@ -28,7 +28,7 @@ exports.getUserById = async (req, res) => {
 };
 exports.getUserByEmail = async (req, res) => {
   try {
-    const user = await UserService.getUserByEmail(req.params.email);
+    const user = await UserService.getUserByEmail(req.body.email);
     res.json({ data: user, status: "success" });
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -37,7 +37,7 @@ exports.getUserByEmail = async (req, res) => {
  
 exports.updateUser = async (req, res) => {
   try {
-    const user = await UserService.updateUser(req.params.id, req.name, req.email, req.password);
+    const user = await UserService.updateUser(req.body);
     res.json({ data: user, status: "success" });
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -47,6 +47,15 @@ exports.updateUser = async (req, res) => {
 exports.deleteUser = async (req, res) => {
   try {
     const user = await UserService.deleteUser(req.params.id);
+    res.json({ data: user, status: "success" });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+//construir log function
+exports.logUser = async (req, res) => {
+  try {
+    const user = await UserService.logUser(req.body.email);
     res.json({ data: user, status: "success" });
   } catch (err) {
     res.status(500).json({ error: err.message });

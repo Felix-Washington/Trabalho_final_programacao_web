@@ -16,7 +16,9 @@ exports.getUserByEmail = async (email) => {
 exports.updateUser = async (id, user) => {
   return await UserModel.findByIdAndUpdate(id, user);
 };
- 
 exports.deleteUser = async (id) => {
   return await UserModel.findByIdAndDelete(id);
+};
+exports.logUser = async (email) => {
+  return await UserModel.findOne({email: email});
 };
