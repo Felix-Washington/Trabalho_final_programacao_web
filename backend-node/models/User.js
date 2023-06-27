@@ -16,7 +16,6 @@ const userSchema = new Schema({
   },
   session_id: {
     type: String,
-    required: true
   },
   deck: {
     type:Array

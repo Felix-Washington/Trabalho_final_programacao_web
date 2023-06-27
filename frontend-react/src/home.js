@@ -1,9 +1,10 @@
 import React, {useState} from "react";
-import "./home.css";
+import "./styles/home.css";
 import Navigation from "./navbar";
 
 function Home(){
     const [name, setName] = useState(null)
+    const [email, setEmail] = useState(null)
     fetch('http://localhost:5000/api/users/auth',{
         method: 'GET',
         headers: {
@@ -13,10 +14,11 @@ function Home(){
       .then(user => user.json())
       .then(user => {
         setName(user.name)
+        setEmail(user.email)
       })
     return(
         <React.Fragment>
-            <Navigation/>
+            <Navigation email={email}/>
             <div className="main-window">
                 <h2>Welcome, <u>{name}</u></h2>
                 <img></img>

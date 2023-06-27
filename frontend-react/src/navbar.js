@@ -3,7 +3,7 @@ import {Container, Nav, Navbar, NavDropdown} from "react-bootstrap"
 import { useNavigate } from "react-router-dom";
 
 
-function Navigation(){
+function Navigation({email}){
     const navigate = useNavigate()
     function logout() {
         fetch('/api/users/logout', {
@@ -26,7 +26,7 @@ function Navigation(){
                         <Nav.Link href="/home">Home</Nav.Link>
                         <Nav.Link href="">Deck Manager</Nav.Link>
                         <Nav.Link href="/collection">Collection</Nav.Link>
-                        <Nav.Link href="">Account</Nav.Link>
+                        <Nav.Link href="/account">Account</Nav.Link>
                         <NavDropdown title="Play Game" id="basic-nav-dropdown">
                         <NavDropdown.Item href="/game">Easy</NavDropdown.Item>
                         <NavDropdown.Item href="#action/3.2">
@@ -41,6 +41,7 @@ function Navigation(){
                         
                     </Nav>
                     <Nav className="ms-auto">
+                        <Nav.Link >{email}</Nav.Link>
                         <Nav.Link onClick={() => logout()}>Logout</Nav.Link>
                     </Nav>
                     </Navbar.Collapse>

@@ -4,7 +4,6 @@ import { useState, useEffect} from 'react';
 //import enemy_data from "../src/resources/enemy_hand.json"
 import {Modal, Button} from 'react-bootstrap';
 import { useNavigate } from "react-router-dom";
-import Cookies from 'js-cookie';
 
 var count = 0;
 var jogadas = 0;

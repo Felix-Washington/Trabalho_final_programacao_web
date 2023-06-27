@@ -1,22 +1,18 @@
 const express = require('express');
 const router = express.Router();
-
-// Load User model
 const User = require('../../models/User');
 
 
-// @route GET api/books
-// @description Get all books
-// @access Public
+// @route GET api/users
+// @description Get all users
 router.get('/', (req, res) => {
   User.find()
     .then(users => res.json(users))
     .catch(err => res.status(404).json({ nousersfound: 'No Users found' }));
 });
 
-// @route GET api/books/:id
-// @description Get single book by id
-// @access Public
+// @route GET api/users/id/:id
+// @description Get single user by id
 router.get('/id/:id', (req, res) => {
   User.findById(req.params.id)
     .then(user => res.json(user))
@@ -30,18 +26,16 @@ router.get('/email/:email', (req, res) => {
   });
   
 
-// @route GET api/books
-// @description add/save book
-// @access Public
+// @route POST api/users
+// @description add/save user
 router.post('/', (req, res) => {
   User.create(req.body)
     .then(user => res.json({ msg: 'User added successfully' }))
     .catch(err => res.status(400).json({ error: 'Unable to add this user' }));
 });
 
-// @route GET api/books/:id
-// @description Update book
-// @access Public
+// @route api/user/:id
+// @description Update user
 router.put('/:id', (req, res) => {
   User.findByIdAndUpdate(req.params.id, req.body)
     .then(user => res.json({ msg: 'Updated successfully' }))
@@ -50,8 +44,8 @@ router.put('/:id', (req, res) => {
     );
 });
 
-// @route GET api/books/:id
-// @description Delete book by id
+// @route DELETE api/users/id/:id
+// @description Delete user by id
 // @access Public
 router.delete('/id/:id', (req, res) => {
   User.findByIdAndRemove(req.params.id, req.body)
@@ -59,6 +53,7 @@ router.delete('/id/:id', (req, res) => {
     .catch(err => res.status(404).json({ error: 'No such a user' }));
 });
 
+// @route LOGIN
 var session;
 router.post('/login',(req,res) => {
 
@@ -84,6 +79,8 @@ router.post('/login',(req,res) => {
   }
   )
 })
+
+// @route LOGOUT
 router.get('/logout',(req,res) => {
   User.findOne({session_id: req.session.id})
   .then(user => {
@@ -101,6 +98,7 @@ router.get('/logout',(req,res) => {
 
 });
 
+// @route get auth
 router.get('/auth', (req, res) => {
   console.log(session);
   User.findOne({"session_id": session.id})
