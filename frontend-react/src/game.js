@@ -1,8 +1,10 @@
 import React from "react";
-import { useState} from 'react';
+import { useState, useEffect} from 'react';
 //import player_data from "../src/resources/player_hand.json"
 //import enemy_data from "../src/resources/enemy_hand.json"
 import {Modal, Button} from 'react-bootstrap';
+import { useNavigate } from "react-router-dom";
+import Cookies from 'js-cookie';
 
 var count = 0;
 var jogadas = 0;
@@ -98,18 +100,17 @@ export default function Board() {
 
   //requests da API pra começar o jogo
   function game_start(){
-    
-    fetch('/api/users/email/test2@testemail.com', {
-    method: "GET",
-    headers: {
-      "Accept": "application/json"
-    }
+
+    fetch('http://localhost:5000/api/users/auth',{
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      },
     })
-    .then(response => response.json())
-    .then(json => {
-      setPlayerHand(json.deck);
+    .then(user => user.json())
+    .then(user => {
+      setPlayerHand(user.deck)
     })
-    .catch(error => console.error(error));
 
     fetch('/api/users/email/testemail@testemail.com', {
       method: "GET",
@@ -374,7 +375,11 @@ export default function Board() {
   else{
     return (
       <React.Fragment>
+                <div className="botao-voltar">
+          <Button className="d-grid gap-2 mt-3" size="sm" variant="success" href="/home">Voltar</Button>
+        </div>
         <div className="game">
+          
           <div className="player-hand">
             <PlayerHandComponent playerHand={playerHand}/>
           </div>
@@ -403,7 +408,7 @@ export default function Board() {
             <Card carta={enemyHand[3]} enemyCard={true}/>
             <Card carta={enemyHand[4]} enemyCard={true}/>
           </div>
-
+         
           <Modal 
             show={modalIsOpen} 
             //onHide={false}
@@ -432,7 +437,10 @@ export default function Board() {
               </Modal.Body>
           </Modal>
         </div>
+
       </React.Fragment>
     );
   }
+  
+
 };

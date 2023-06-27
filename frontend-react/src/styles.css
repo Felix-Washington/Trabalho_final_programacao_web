@@ -71,7 +71,7 @@ body {
 
 .game{
   background-color: #7A5687;
-  margin:10% 10% 0px 10%;
+  margin:5% 10% 0px 10%;
   border:5px solid black;
   border-radius: 50px;
   display:flex;
@@ -221,7 +221,7 @@ body {
 @media only screen and (min-width: 1600px){
   .game{
     background-color: #7A5687;
-    margin:10% 10% 0px 10%;
+    margin:5% 10% 0px 10%;
     border:5px solid black;
     border-radius: 50px;
     display:flex;
@@ -241,7 +241,7 @@ body {
 @media only screen and (min-width: 1800px){
     .game{
       background-color: #7A5687;
-      margin:10% 10% 0px 10%;
+      margin:5% 10% 0px 10%;
       border:5px solid black;
       border-radius: 50px;
       display:flex;
@@ -320,4 +320,8 @@ body {
   margin-bottom: 10px;
 }
 
+.botao-voltar{
+  width:100px;
+  margin-left:15px;
+}
 

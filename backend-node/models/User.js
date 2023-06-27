@@ -14,7 +14,7 @@ const userSchema = new Schema({
     type: String,
     required: true
   },
-  token: {
+  session_id: {
     type: String,
     required: true
   },

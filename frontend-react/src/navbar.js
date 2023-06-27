@@ -1,8 +1,20 @@
 import React, { useState } from "react";
 import {Container, Nav, Navbar, NavDropdown} from "react-bootstrap"
+import { useNavigate } from "react-router-dom";
 
 
 function Navigation(){
+    const navigate = useNavigate()
+    function logout() {
+        fetch('/api/users/logout', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+        })
+        .then(data => navigate("/"))
+        
+    }
     return(
         <React.Fragment>
             <Navbar expand="sm" className="bg-body-tertiary">
@@ -29,7 +41,7 @@ function Navigation(){
                         
                     </Nav>
                     <Nav className="ms-auto">
-                        <Nav.Link href="/">Logout</Nav.Link>
+                        <Nav.Link onClick={() => logout()}>Logout</Nav.Link>
                     </Nav>
                     </Navbar.Collapse>
                 </Container>

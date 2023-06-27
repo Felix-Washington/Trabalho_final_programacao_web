@@ -1,36 +1,39 @@
-import React, { useState } from "react";
+import React, { useState , useEffect} from "react";
 import "./login.css";
 import "bootstrap/dist/css/bootstrap.min.css"
-
-async function loginUser(email, password) {
-    return fetch('/api/users/auth', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: {email: email, password:password}
-    })
-      .then(data => data.json())
-}
+import { useNavigate } from "react-router-dom";
 
 
-function Login({token}){
-    const [email, setUserName] = useState();
+
+function Login(){
+    const navigate = useNavigate()
+ 
+    const [email, setEmail] = useState();
     const [password, setPassword] = useState();
-    
     const handleSubmit = async e => {
-        console.log("TEST");
-        loginUser(email, password);
-        //alert(username);
-        //alert(password);
+
+        fetch('/api/users/login', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({"email": email, "password":password})
+          })
+            .then(data => data.json())
+            .then(data =>{
+                if (data.cookie === undefined){
+                    alert(data.result)
+                }
+                else{
+                    console.log("LOGGED")
+                    
+                    navigate("/home")
+
+                }
+            }
+            )
         e.preventDefault();
-        /*
-        const token = await loginUser({
-          username,
-          password
-        });
-        setToken(token);
-        */
+
       }
 
     return(
@@ -46,7 +49,7 @@ function Login({token}){
                         type="email"
                         className="form-control mt-1"
                         placeholder="Enter email"
-                        onChange={e => setUserName(e.target.value)}
+                        onChange={e => setEmail(e.target.value)}
                         />
                     </div>
                     <div className="form-group mt-3">
@@ -62,9 +65,11 @@ function Login({token}){
                         <button type="submit" className="btn btn-primary" >
                         Submit
                         </button>
+
+                        
                     </div>
                     <p className="forgot-password text-right mt-2">
-                        Forgot <a href="#">password?</a>
+                        Forgot <a href="/">password?</a>
                     </p>
                     </div>
                 </form>
@@ -73,6 +78,9 @@ function Login({token}){
         
         
     )
+
+
+    
 }
 
 export default Login
