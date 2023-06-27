@@ -21,7 +21,7 @@ function Home(){
             <Navigation email={email}/>
             <div className="main-window">
                 <h2>Welcome, <u>{name}</u></h2>
-                <img></img>
+                <img className="title_login" src="https://i.imgur.com/T3ybYPx.png" ></img>
             </div>
         </React.Fragment>  
     )
